@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KABO SYSTEM V1</title>
+    <meta
+      name="description"
+      content="KABO SYSTEM V1 — a lightweight personal system for learning, observation, productivity, fitness, and project planning."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <div class="brand-block">
+          <div class="brand-mark">K</div>
+          <div>
+            <p class="eyebrow">PERSONAL SYSTEM</p>
+            <h1>KABO SYSTEM</h1>
+          </div>
+        </div>
+
+        <p class="motto">Observe. Understand. Learn. Adapt. Build.</p>
+
+        <nav class="nav" aria-label="Section navigation">
+          <button class="nav-item active" data-section="dashboard" type="button">Dashboard</button>
+          <button class="nav-item" data-section="learning" type="button">Learning</button>
+          <button class="nav-item" data-section="ai" type="button">AI &amp; Technology</button>
+          <button class="nav-item" data-section="programming" type="button">Programming</button>
+          <button class="nav-item" data-section="money" type="button">Money &amp; Cash Flow</button>
+          <button class="nav-item" data-section="football" type="button">Football</button>
+          <button class="nav-item" data-section="fitness" type="button">Body &amp; Fitness</button>
+          <button class="nav-item" data-section="observations" type="button">Observation &amp; Analysis</button>
+        </nav>
+
+        <div class="sidebar-note">
+          <strong>Local data:</strong>
+          <p>Saved in this browser only. Clearing browser storage will remove the data.</p>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">V1 FOUNDATION</p>
+            <h2 id="page-title">Dashboard</h2>
+          </div>
+        </header>
+
+        <section id="dashboard" class="panel active" aria-live="polite">
+          <div class="overview-grid" id="overviewGrid"></div>
+        </section>
+
+        <section id="learning" class="panel" aria-live="polite">
+          <div class="section-header">
+            <h3>Learning</h3>
+            <p>Track what you are learning and your progress.</p>
+          </div>
+          <form class="entry-form" data-section="learning">
+            <label>
+              Topic
+              <input type="text" name="title" maxlength="120" placeholder="Example: JavaScript fundamentals" required />
+            </label>
+            <label>
+              Note
+              <textarea name="content" maxlength="500" rows="3" placeholder="What did you learn today?" required></textarea>
+            </label>
+            <div class="form-row">
+              <label>
+                Progress
+                <input type="number" name="progress" min="0" max="100" value="10" required />
+              </label>
+              <button type="submit">Add learning note</button>
+            </div>
+          </form>
+          <div class="entry-list" data-list="learning"></div>
+        </section>
+
+        <section id="ai" class="panel" aria-live="polite">
+          <div class="section-header">
+            <h3>AI &amp; Technology</h3>
+            <p>Record tools, experiments, and future ideas.</p>
+          </div>
+          <form class="entry-form" data-section="ai">
+            <label>
+              Topic
+              <input type="text" name="title" maxlength="120" placeholder="Example: GitHub Copilot workflows" required />
+            </label>
+            <label>
+              Note
+              <textarea name="content" maxlength="500" rows="3" placeholder="What are you testing or learning?" required></textarea>
+            </label>
+            <div class="form-row">
+              <label>
+                Progress
+                <input type="number" name="progress" min="0" max="100" value="20" required />
+              </label>
+              <button type="submit">Add AI note</button>
+            </div>
+          </form>
+          <div class="entry-list" data-list="ai"></div>
+        </section>
+
+        <section id="programming" class="panel" aria-live="polite">
+          <div class="section-header">
+            <h3>Programming</h3>
+            <p>Track coding concepts, exercises, and development work.</p>
+          </div>
+          <form class="entry-form" data-section="programming">
+            <label>
+              Concept or task
+              <input type="text" name="title" maxlength="120" placeholder="Example: DOM events and form validation" required />
+            </label>
+            <label>
+              Note
+              <textarea name="content" maxlength="500" rows="3" placeholder="Describe the task or lesson." required></textarea>
+            </label>
+            <div class="form-row">
+              <label>
+                Progress
+                <input type="number" name="progress" min="0" max="100" value="25" required />
+              </label>
+              <button type="submit">Add programming note</button>
+            </div>
+          </form>
+          <div class="entry-list" data-list="programming"></div>
+        </section>
+
+        <section id="money" class="panel" aria-live="polite">
+          <div class="section-header">
+            <h3>Money &amp; Cash Flow</h3>
+            <p>Log income or expense notes manually. No accounts are connected.</p>
+          </div>
+          <form class="entry-form" data-section="money">
+            <label>
+              Type or goal
+              <input type="text" name="title" maxlength="120" placeholder="Example: Monthly food budget" required />
+            </label>
+            <label>
+              Note
+              <textarea name="content" maxlength="500" rows="3" placeholder="Record an income note, expense note, or financial goal." required></textarea>
+            </label>
+            <div class="form-row">
+              <label>
+                Progress
+                <input type="number" name="progress" min="0" max="100" value="15" required />
+              </label>
+              <button type="submit">Add money note</button>
+            </div>
+          </form>
+          <div class="entry-list" data-list="money"></div>
+        </section>
+
+        <section id="football" class="panel" aria-live="polite">
+          <div class="section-header">
+            <h3>Football</h3>
+            <p>Record goals, game observations, and practice focus.</p>
+          </div>
+          <form class="entry-form" data-section="football">
+            <label>
+              Goal or drill
+              <input type="text" name="title" maxlength="120" placeholder="Example: Passing accuracy" required />
+            </label>
+            <label>
+              Note
+              <textarea name="content" maxlength="500" rows="3" placeholder="Describe your training or match observation." required></textarea>
+            </label>
+            <div class="form-row">
+              <label>
+                Progress
+                <input type="number" name="progress" min="0" max="100" value="30" required />
+              </label>
+              <button type="submit">Add football note</button>
+            </div>
+          </form>
+          <div class="entry-list" data-list="football"></div>
+        </section>
+
+        <section id="fitness" class="panel" aria-live="polite">
+          <div class="section-header">
+            <h3>Body &amp; Fitness</h3>
+            <p>Track workouts, recovery, and fitness goals.</p>
+          </div>
+          <form class="entry-form" data-section="fitness">
+            <label>
+              Goal or session
+              <input type="text" name="title" maxlength="120" placeholder="Example: 30-minute strength session" required />
+            </label>
+            <label>
+              Note
+              <textarea name="content" maxlength="500" rows="3" placeholder="Record session details, recovery, or effort." required></textarea>
+            </label>
+            <div class="form-row">
+              <label>
+                Progress
+                <input type="number" name="progress" min="0" max="100" value="35" required />
+              </label>
+              <button type="submit">Add fitness note</button>
+            </div>
+          </form>
+          <div class="entry-list" data-list="fitness"></div>
+        </section>
+
+        <section id="observations" class="panel" aria-live="polite">
+          <div class="section-header">
+            <h3>Observation &amp; Analysis</h3>
+            <p>Record lessons, patterns, experiments, and conclusions.</p>
+          </div>
+          <form class="entry-form" data-section="observations">
+            <label>
+              Observation
+              <input type="text" name="title" maxlength="120" placeholder="Example: Focus is strongest in morning blocks" required />
+            </label>
+            <label>
+              Note
+              <textarea name="content" maxlength="500" rows="3" placeholder="Describe what you noticed and what it means." required></textarea>
+            </label>
+            <div class="form-row">
+              <label>
+                Progress
+                <input type="number" name="progress" min="0" max="100" value="40" required />
+              </label>
+              <button type="submit">Add observation</button>
+            </div>
+          </form>
+          <div class="entry-list" data-list="observations"></div>
+        </section>
+      </main>
+    </div>
+
+    <template id="emptyStateTemplate">
+      <div class="empty-state">
+        <p>No notes yet for this section.</p>
+      </div>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
